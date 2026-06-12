@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "21b4f095-e5c1-4d8f-be4d-df9bb9fed0fa",
+    "name": "Lely - Milking System Case",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22456432",
+    "_collection_link": "https://go.postman.co/collection/22456432-21b4f095-e5c1-4d8f-be4d-df9bb9fed0fa?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Record Milking",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"animalId\": 1,\r\n  \"robotId\": 1,\r\n  \"milkYieldLiters\": 0,\r\n  \"duration\": 420,\r\n  \"timestamp\": \"2026-06-09T14:30:00Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5282/api/milkings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5282",
+          "path": [
+            "api",
+            "milkings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Animal",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"IdentificationNumber\": \"aaaaaaaa-aaaaaaaaaa\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/animals",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "animals"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Active Robot List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5282/api/robots/active",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5282",
+          "path": [
+            "api",
+            "robots",
+            "active"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Record Weight",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"AnimalId\": \"11\",\r\n    \"RobotId\": \"1\",\r\n    \"WeightKg\": 500.11,\r\n    \"Timestamp\": \"2026-06-10T14:30:00Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5282/api/weights",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5282",
+          "path": [
+            "api",
+            "weights"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Weight List For Animal",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"AnimalId\": \"11\",\r\n    \"RobotId\": \"1\",\r\n    \"WeightKg\": 500.11,\r\n    \"Timestamp\": \"2026-06-10T14:30:00Z\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5282/api/weights/animal/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5282",
+          "path": [
+            "api",
+            "weights",
+            "animal",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
